@@ -7,9 +7,8 @@ class Helper {
         userList.append(user)
     }
     
-    func getUsersFullName() {
-        for user in userList {
-            print(user.personalData.fullName)
-        }
+    func getUsers() -> [User] {
+        userList
     }
 }
+
