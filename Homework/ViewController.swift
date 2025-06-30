@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private let names = [("Alex", "Brixencov"), ("John", "Doe"), ("Jane", "Smith")]
-    let helper = Helper()
+    private let helper = Helper()
     
     
     override func viewDidLoad() {
