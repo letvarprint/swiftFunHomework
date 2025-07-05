@@ -2,26 +2,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let names = [("Alex", "Brixencov"), ("John", "Doe"), ("Jane", "Smith")]
+    
     private let helper = Helper()
+    private let userRepository = UserRepository()
+    private let names = [("Alex", "Brixencov"), ("John", "Doe"), ("Jane", "Smith")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNames()
+        view.backgroundColor = .blue
+        view.alpha = 0.9
+        addUsers()
         printNames()
     }
     
-    private func addNames() {
-        for (name, surname) in names {
-            helper.addUser(User(login: "User", password: "123", personalData: Person(name: name, surname: surname)))
-        }
+    private func addUsers() {
+        let userList = userRepository.getUsers(names: names)
+        helper.addManyUsers(userList)
     }
+    
     private func printNames() {
         let usersFullName = helper.getUsers().map {$0.personalData.fullName}
         for name in usersFullName {
             print(name)
         }
     }
-    
 }

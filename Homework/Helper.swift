@@ -7,6 +7,10 @@ class Helper {
         userList.append(user)
     }
     
+    func addManyUsers(_ users: [User]) {
+        userList.append(contentsOf: users)
+    }
+    
     func getUsers() -> [User] {
         userList
     }
