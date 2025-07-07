@@ -2,11 +2,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     private let helper = Helper()
     private let userRepository = UserRepository()
-    private let names = [("Alex", "Brixencov"), ("John", "Doe"), ("Jane", "Smith")]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +14,7 @@ class ViewController: UIViewController {
     }
     
     private func addUsers() {
-        let userList = userRepository.getUsers(names: names)
+        let userList = userRepository.getUsers()
         helper.addManyUsers(userList)
     }
     
